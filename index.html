@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ShadowFaction SMP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #00ff99;
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 15px;
+      text-align: center;
+      border-bottom: 2px solid #00ff99;
+    }
+
+    nav a {
+      color: #00ff99;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffaa;
+    }
+
+    section {
+      display: none;
+      padding: 30px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    img {
+      margin: 10px;
+      border: 2px solid #00ff99;
+      border-radius: 8px;
+      max-width: 300px;
+    }
+
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      margin: 10px 0;
+      padding: 10px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 16px;
+      background-color: #000;
+      color: #00ff99;
+      border: 1px solid #00ff99;
+      border-radius: 5px;
+    }
+
+    form button {
+      cursor: pointer;
+      background-color: #00ff99;
+      color: #000;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #00ffaa;
+    }
+
+    h1, h2 {
+      border-bottom: 2px solid #00ff99;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('rules')">Rules</a>
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('gallery')">Gallery</a>
+    <a onclick="showPage('plugins')">Plugins</a>
+    <a onclick="showPage('apply')">Apply</a>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="active">
+    <h1>Welcome to ShadowFaction SMP</h1>
+    <p>Explore a custom survival world filled with community-driven adventures, faction drama, and epic builds.</p>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules">
+    <h2>Server Rules</h2>
+    <ul>
+      <li>No griefing or stealing</li>
+      <li>Respect all players and staff</li>
+      <li>No hacking, x-ray, or exploit use</li>
+      <li>Keep chat clean and drama-free</li>
+      <li>Do not impersonate staff</li>
+    </ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About ShadowFaction</h2>
+    <p>ShadowFaction SMP is a close-knit Minecraft survival server with custom plugins, faction events, and a heavy focus on creativity and roleplay. Join the ranks, forge alliances, and leave your legacy.</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <img src="images/1.png" alt="Screenshot 1">
+    <img src="images/2.png" alt="Screenshot 2">
+    <img src="images/3.png" alt="Screenshot 3">
+    <p>Submit your screenshots to be featured!</p>
+  </section>
+
+  <!-- PLUGINS -->
+  <section id="plugins">
+    <h2>Plugins We Use</h2>
+    <ul>
+      <li>EssentialsX</li>
+      <li>GriefPrevention</li>
+      <li>Dynmap</li>
+      <li>mcMMO</li>
+      <li>Custom Factions</li>
+      <li>Jobs Reborn</li>
+      <li>ShopGUI+ (Player shops)</li>
+    </ul>
+  </section>
+
+  <!-- APPLY -->
+  <section id="apply">
+    <h2>Apply to Join</h2>
+    <form action="https://your-discord-or-form-link.com" method="POST">
+      <input type="text" name="username" placeholder="Minecraft Username" required>
+      <input type="number" name="age" placeholder="Your Age" required>
+      <textarea name="why" placeholder="Why do you want to join?" rows="4" required></textarea>
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <!-- JAVASCRIPT NAVIGATION -->
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
