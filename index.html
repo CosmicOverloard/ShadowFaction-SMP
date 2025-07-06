@@ -2,177 +2,155 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shadow Faction SMP</title>
   <style>
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0e0e0e;
+      color: #fff;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
+      padding: 0;
     }
-
     header {
-      background-color: #1b1b1b;
-      padding: 2rem 1rem;
+      background-color: #1a1a1a;
+      padding: 20px;
       text-align: center;
     }
-
-    header h1 {
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff;
-    }
-
-    .player-count {
-      color: #0f0;
-      font-weight: bold;
-      margin-top: 0.5rem;
-    }
-
     nav {
+      background-color: #222;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      background-color: #181818;
-      border-top: 1px solid #00ffff44;
-      border-bottom: 1px solid #00ffff44;
-      padding: 1rem 0;
+      gap: 20px;
+      padding: 10px 0;
       flex-wrap: wrap;
     }
-
     nav a {
       color: #ccc;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.2s;
     }
-
     nav a:hover {
-      color: #00ffff;
+      color: #fff;
     }
-
     main {
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section {
-      display: none;
-    }
-
-    section.active {
-      display: block;
-    }
-
-    h2 {
-      color: #00ffff;
+      padding: 40px;
       text-align: center;
     }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-      text-align: left;
-      max-width: 600px;
-      margin: auto;
+    .player-count {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #0f0;
     }
-
     iframe {
       width: 100%;
       height: 600px;
       border: none;
+      margin-top: 20px;
       border-radius: 10px;
-      margin-top: 1rem;
     }
-
     footer {
-      text-align: center;
-      padding: 1rem;
       background-color: #111;
-      color: #aaa;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background: #00ffff22;
-      border: 1px solid #00ffff;
-      color: #00ffff;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background: #00ffff44;
+      color: #888;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Shadow Faction SMP</h1>
+    <h1>Welcome to Shadow Faction SMP</h1>
     <p class="player-count">Online Players: <span id="player-count">Loading...</span></p>
   </header>
 
   <nav>
-    <a href="#" data-page="home">Home</a>
-    <a href="#" data-page="plugins">Plugins</a>
-    <a href="#" data-page="staff">Staff Application</a>
-    <a href="#" data-page="join">Join</a>
-    <a href="#" data-page="map">Live Map</a>
+    <a href="#home">Home</a>
+    <a href="#plugins">Plugins</a>
+    <a href="#staff">Staff Application</a>
+    <a href="#join">Join Factions</a>
+    <a href="#map">Live Map</a>
   </nav>
 
   <main>
-    <section id="home" class="active">
-      <h2>Welcome to Shadow Faction SMP</h2>
-      <p>Join an epic survival factions experience packed with magic, PvP, monsters, and more!</p>
+    <section id="home">
+      <h2>About the Server</h2>
+      <p>Join an epic survival factions experience. Magic, mobs, PvP, and more await!</p>
     </section>
 
     <section id="plugins">
-      <h2>Installed Plugins</h2>
-      <ul style="columns: 2;">
-        <li>AdvancedServerList</li><li>BedWars</li><li>BellClaims</li><li>BlueMap</li>
-        <li>Essentials</li><li>Factions</li><li>FancyNpcs</li><li>FastAsyncWorldEdit</li>
-        <li>Geyser-Spigot</li><li>LevelledMobs</li><li>LuckPerms</li><li>Multiverse-Core</li>
-        <li>Origins (Fantasy, Magic, Mobs, Monsters, Reborn)</li><li>PhoenixCratesLite</li>
-        <li>Plan</li><li>SkinsRestorer</li><li>spark</li><li>Timber</li><li>Vault</li><li>WorldGuard</li>
+      <h2>Plugins</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li>.paper-remapped</li>
+        <li>AdvancedServerList</li>
+        <li>BedWars</li>
+        <li>BellClaims</li>
+        <li>BlueMap</li>
+        <li>bStats</li>
+        <li>ChatFormatter</li>
+        <li>Chunky</li>
+        <li>CommandPanels</li>
+        <li>Essentials</li>
+        <li>Factions</li>
+        <li>FancyNpcs</li>
+        <li>FastAsyncWorldEdit</li>
+        <li>floodgate</li>
+        <li>Geyser-Spigot</li>
+        <li>LevelledMobs</li>
+        <li>LuckPerms</li>
+        <li>Maintenance</li>
+        <li>Multiverse-Core</li>
+        <li>Origins-Fantasy</li>
+        <li>Origins-Magic</li>
+        <li>Origins-Mobs</li>
+        <li>Origins-Monsters</li>
+        <li>Origins-Reborn</li>
+        <li>PhoenixCratesLite</li>
+        <li>Plan</li>
+        <li>SkinsRestorer</li>
+        <li>spark</li>
+        <li>TAB</li>
+        <li>TerraformGenerator</li>
+        <li>Timber</li>
+        <li>Vault</li>
+        <li>Veinminer</li>
+        <li>ViaVersion</li>
+        <li>voicechat</li>
+        <li>WildRTP</li>
+        <li>WorldEdit</li>
+        <li>WorldGuard</li>
       </ul>
     </section>
 
     <section id="staff">
-      <h2>Apply for Staff</h2>
-      <p>We’re looking for mature, helpful, and responsible players to join the team!</p>
-      <form action="https://formspree.io/f/mvgrnojg" method="POST" style="max-width: 600px; margin: auto;">
-        <label>Age (13+):<br />
-          <input type="number" name="age" required style="width: 100%; padding: 0.5rem;" />
-        </label><br /><br />
-        <label>Why do you want to be staff?<br />
-          <textarea name="why" required style="width: 100%; padding: 0.5rem;"></textarea>
-        </label><br /><br />
-        <label>What makes you a good fit?<br />
-          <textarea name="fit" required style="width: 100%; padding: 0.5rem;"></textarea>
-        </label><br /><br />
-        <label>Moderation experience:<br />
-          <textarea name="experience" style="width: 100%; padding: 0.5rem;"></textarea>
-        </label><br /><br />
-        <label>Hours per week:<br />
-          <input type="text" name="hours" required style="width: 100%; padding: 0.5rem;" />
-        </label><br /><br />
-        <button type="submit" class="btn">Submit Application</button>
-      </form>
+      <h2>Staff Applications</h2>
+      <p>Want to be a part of our staff team? We’re looking for mature, helpful, and responsible players!</p>
+      <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+        <li>✔ Your age (13+ only)</li>
+        <li>✔ Why you want to be staff</li>
+        <li>✔ What makes you a good fit</li>
+        <li>✔ Your past moderation experience</li>
+        <li>✔ How many hours per week you can dedicate</li>
+      </ul>
+      <br />
+      <a href="https://formspree.io/forms/mvgrnojg/integration" target="_blank" style="color: #00f; font-weight: bold;">Apply Now →</a>
     </section>
 
     <section id="join">
       <h2>How to Join</h2>
       <p>Server IP: <strong>ShadowFactionSMP.mc.gg</strong></p>
-      <p>Compatible with Java & Bedrock (via Geyser)</p>
+      <p>Compatible with Java and Bedrock (via Geyser)</p>
     </section>
 
     <section id="map">
-      <h2>Live Map</h2>
-      <iframe src="http://209.192.187.86:6943/#hub:6:39:-16:12:-0.17:1.26:0:0:perspective" allowfullscreen></iframe>
+      <h2>Live World Map</h2>
+      <iframe 
+        src="http://209.192.187.86:6943/#hub:6:39:-16:12:-0.17:1.26:0:0:perspective" 
+        width="100%" 
+        height="600px" 
+        style="border: none; border-radius: 10px;" 
+        allowfullscreen>
+      </iframe>
     </section>
   </main>
 
@@ -181,22 +159,6 @@
   </footer>
 
   <script>
-    const links = document.querySelectorAll("nav a");
-    const sections = document.querySelectorAll("main section");
-
-    links.forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        const page = link.getAttribute("data-page");
-
-        sections.forEach(section => {
-          section.classList.remove("active");
-        });
-
-        document.getElementById(page).classList.add("active");
-      });
-    });
-
     function updatePlayerCount() {
       fetch("https://api.mcstatus.io/v2/status/java/ShadowFactionSMP.mc.gg")
         .then(res => res.json())
@@ -204,8 +166,9 @@
           document.getElementById("player-count").textContent =
             `${data.players.online}/${data.players.max}`;
         })
-        .catch(() => {
+        .catch(err => {
           document.getElementById("player-count").textContent = "Offline";
+          console.error("Error fetching player count:", err);
         });
     }
 
