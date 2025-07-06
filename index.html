@@ -5,250 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shadow Faction SMP</title>
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: #0a0a0a;
-      color: #ddd;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      align-items: center;
-      justify-content: flex-start;
-      text-align: center;
-      padding: 20px;
-    }
-
-    header {
-      margin-bottom: 30px;
-      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-    }
-
-    header h1 {
-      font-size: 4rem;
-      letter-spacing: 0.1em;
-      color: #00ffcc;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #66fff3aa;
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 40px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #0a0a0a;
-      background: #00ffcc;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #00ffcc;
-      transition: background 0.3s, box-shadow 0.3s;
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      background: #00e6b8;
-      box-shadow: 0 0 20px #00e6b8;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto 40px;
-      width: 100%;
-      text-align: left;
-    }
-
-    main p {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      margin-bottom: 30px;
-      color: #bbb;
-      text-shadow: 0 0 5px #00ffcc33;
-      text-align: center;
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 15px;
-      font-size: 0.9rem;
-      color: #444;
-      text-shadow: none;
-      text-align: center;
-    }
-
-    /* Glow animation */
-    .glow {
-      color: #00ffcc;
-      text-shadow:
-        0 0 5px #00ffc8,
-        0 0 10px #00ffc8,
-        0 0 20px #00ffc8,
-        0 0 40px #00ffc8,
-        0 0 80px #00ffc8;
-      animation: pulseGlow 2s infinite alternate;
-    }
-
-    @keyframes pulseGlow {
-      from {
-        text-shadow:
-          0 0 10px #00ffc8,
-          0 0 20px #00ffc8,
-          0 0 30px #00ffc8,
-          0 0 50px #00ffc8,
-          0 0 100px #00ffc8;
-      }
-      to {
-        text-shadow:
-          0 0 5px #00ffc8,
-          0 0 10px #00ffc8,
-          0 0 15px #00ffc8,
-          0 0 30px #00ffc8,
-          0 0 60px #00ffc8;
-      }
-    }
-
-    /* Tabs container */
-    .tabs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-      gap: 20px;
-    }
-
-    .tab-button {
-      background: #111;
-      border: 2px solid #00ffcc;
-      border-radius: 30px;
-      padding: 10px 25px;
-      cursor: pointer;
-      font-weight: bold;
-      color: #00ffcc;
-      transition: background 0.3s, color 0.3s;
-      user-select: none;
-    }
-
-    .tab-button.active,
-    .tab-button:hover {
-      background: #00ffcc;
-      color: #0a0a0a;
-      box-shadow: 0 0 15px #00ffcc;
-    }
-
-    /* Tab content */
-    .tab-content {
-      display: none;
-      background: #111;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px #00ffcc44;
-      max-height: 600px;
-      overflow-y: auto;
-      color: #ccc;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      white-space: normal;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    /* Plugin list style */
-    .plugin-list {
-      columns: 2;
-      -webkit-columns: 2;
-      -moz-columns: 2;
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    .plugin-list li {
-      padding: 5px 0;
-      border-bottom: 1px solid #00ffcc22;
-      cursor: default;
-    }
-
-    .plugin-list li:hover {
-      color: #00ffc8;
-      text-shadow: 0 0 5px #00ffc8;
-    }
-
-    /* Form styling */
-    form {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-      color: #00ffcc;
-    }
-
-    form input[type="text"],
-    form input[type="email"],
-    form input[type="number"],
-    form textarea,
-    form select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 8px;
-      border: 1px solid #00ffcc88;
-      background: #222;
-      color: #ddd;
-      font-size: 1rem;
-      resize: vertical;
-      box-sizing: border-box;
-    }
-
-    form textarea {
-      min-height: 100px;
-    }
-
-    form button {
-      margin-top: 25px;
-      background: #00ffcc;
-      color: #0a0a0a;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #00ffcc;
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-
-    form button:hover {
-      background: #00e6b8;
-      box-shadow: 0 0 20px #00e6b8;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 600px) {
-      .plugin-list {
-        columns: 1;
-      }
-
-      header h1 {
-        font-size: 3rem;
-      }
-    }
+    /* ... your existing CSS here ... */
   </style>
 </head>
 <body>
@@ -294,4 +51,81 @@
         <li>Multiverse-Core</li>
         <li>Origins-Fantasy</li>
         <li>Origins-Magic</li>
-        <li>Origins-M
+        <li>Origins-Mobs</li>
+        <li>Origins-Monsters</li>
+        <li>Origins-Reborn</li>
+        <li>PhoenixCratesLite</li>
+        <li>Plan</li>
+        <li>SkinsRestorer</li>
+        <li>spark</li>
+        <li>TAB</li>
+        <li>TerraformGenerator</li>
+        <li>Timber</li>
+        <li>Vault</li>
+        <li>Veinminer</li>
+        <li>ViaVersion</li>
+        <li>voicechat</li>
+        <li>WildRTP</li>
+        <li>WorldEdit</li>
+        <li>WorldGuard</li>
+      </ul>
+    </section>
+
+    <section id="staff" class="tab-content">
+      <h2 class="glow" style="text-align:center; margin-bottom: 15px;">Staff Application</h2>
+      <form action="https://formspree.io/f/mvgrnojg" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="13" required />
+
+        <label for="discord">Discord Username:</label>
+        <input type="text" id="discord" name="discord" placeholder="User#1234" required />
+
+        <label for="experience">What previous experience do you have as a staff member (if any)?</label>
+        <textarea id="experience" name="experience" rows="4" required></textarea>
+
+        <label for="motivation">Why do you think we should pick you for staff?</label>
+        <textarea id="motivation" name="motivation" rows="4" required></textarea>
+
+        <label for="strengths">What are your greatest strengths?</label>
+        <textarea id="strengths" name="strengths" rows="3" required></textarea>
+
+        <label for="weaknesses">What do you feel are areas you need to improve on?</label>
+        <textarea id="weaknesses" name="weaknesses" rows="3" required></textarea>
+
+        <label for="availability">How much time per week can you dedicate to staff duties?</label>
+        <input type="text" id="availability" name="availability" placeholder="e.g., 10-15 hours" required />
+
+        <label for="conflicts">Have you ever been banned or removed from a server? If yes, please explain.</label>
+        <textarea id="conflicts" name="conflicts" rows="3"></textarea>
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Shadow Faction SMP | All rights reserved.
+  </footer>
+
+  <script>
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tab = button.getAttribute('data-tab');
+
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
