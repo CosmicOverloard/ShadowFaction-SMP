@@ -2,249 +2,158 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shadow Faction SMP</title>
   <style>
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0e0e0e;
+      color: #fff;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
+      padding: 0;
     }
-
     header {
-      background: linear-gradient(to right, #222, #111);
+      background-color: #1a1a1a;
+      padding: 20px;
       text-align: center;
-      padding: 2rem 1rem;
     }
-
-    header h1 {
-      font-size: 3rem;
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-
-    .tabs {
+    nav {
+      background-color: #222;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      background: #1e1e1e;
-      padding: 0.5rem 0;
+      gap: 20px;
+      padding: 10px 0;
     }
-
-    .tab-button {
-      background: none;
-      border: none;
+    nav a {
       color: #ccc;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .tab-button:hover,
-    .tab-button.active {
-      color: #00ffff;
-      border-bottom: 2px solid #00ffff;
-    }
-
-    .tab-content {
-      display: none;
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #00ffff;
-      color: #000;
-      padding: 0.75rem 1.5rem;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 5px;
-      margin-top: 1rem;
     }
-
-    ul.plugin-list {
-      list-style: none;
-      padding-left: 0;
-      columns: 2;
+    nav a:hover {
+      color: #fff;
     }
-
-    ul.plugin-list li {
-      padding: 0.25rem 0;
-      border-bottom: 1px solid #333;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    form input, form textarea {
-      padding: 0.5rem;
-      border: none;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-
-    form button {
-      padding: 0.75rem;
-      background-color: #00ffff;
-      border: none;
-      color: #000;
-      font-weight: bold;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    footer {
+    main {
+      padding: 40px;
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #888;
     }
-
-    ol {
-      padding-left: 1.5rem;
-    }
-
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
-
     .player-count {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #0f0;
+    }
+    footer {
+      background-color: #111;
+      color: #888;
       text-align: center;
-      margin: 2rem 0;
+      padding: 20px;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Shadow Faction SMP</h1>
-    <p>Survive. Build. Conquer the shadows.</p>
+    <h1>Welcome to Shadow Faction SMP</h1>
+    <p class="player-count">Online Players: <span id="player-count">Loading...</span></p>
   </header>
 
-  <div class="tabs">
-    <button class="tab-button active" data-tab="home">Home</button>
-    <button class="tab-button" data-tab="plugins">Plugins</button>
-    <button class="tab-button" data-tab="staff">Staff Application</button>
-    <button class="tab-button" data-tab="rules">Rules</button>
-    <button class="tab-button" data-tab="top-factions">Top Factions</button>
-  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#plugins">Plugins</a>
+    <a href="#staff">Staff Application</a>
+    <a href="#join">Join Factions</a>
+  </nav>
 
-  <section id="home" class="tab-content active">
-    <h2>Welcome to Shadow Faction SMP</h2>
-    <p>A unique Minecraft experience with custom factions, origins, BedWars, and more. Explore, conquer, and survive in a dynamic world!</p>
-    <a href="#join" class="btn">Join the Faction</a>
+  <main>
+    <section id="home">
+      <h2>About the Server</h2>
+      <p>Join an epic survival factions experience. Magic, mobs, PvP, and more await!</p>
+    </section>
 
-    <div class="player-count">
-      <h3>🧑‍🤝‍🧑 Players Online: <span id="player-count">Loading...</span></h3>
-    </div>
+    <section id="plugins">
+      <h2>Plugins</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li>.paper-remapped</li>
+        <li>AdvancedServerList</li>
+        <li>BedWars</li>
+        <li>BellClaims</li>
+        <li>BlueMap</li>
+        <li>bStats</li>
+        <li>ChatFormatter</li>
+        <li>Chunky</li>
+        <li>CommandPanels</li>
+        <li>Essentials</li>
+        <li>Factions</li>
+        <li>FancyNpcs</li>
+        <li>FastAsyncWorldEdit</li>
+        <li>floodgate</li>
+        <li>Geyser-Spigot</li>
+        <li>LevelledMobs</li>
+        <li>LuckPerms</li>
+        <li>Maintenance</li>
+        <li>Multiverse-Core</li>
+        <li>Origins-Fantasy</li>
+        <li>Origins-Magic</li>
+        <li>Origins-Mobs</li>
+        <li>Origins-Monsters</li>
+        <li>Origins-Reborn</li>
+        <li>PhoenixCratesLite</li>
+        <li>Plan</li>
+        <li>SkinsRestorer</li>
+        <li>spark</li>
+        <li>TAB</li>
+        <li>TerraformGenerator</li>
+        <li>Timber</li>
+        <li>Vault</li>
+        <li>Veinminer</li>
+        <li>ViaVersion</li>
+        <li>voicechat</li>
+        <li>WildRTP</li>
+        <li>WorldEdit</li>
+        <li>WorldGuard</li>
+      </ul>
+    </section>
 
-    <div style="text-align: center;">
-      <a href="http://yourmaplink.com" class="btn" target="_blank">🌍 View World Map</a>
-    </div>
-  </section>
+    <section id="staff">
+      <h2>Staff Applications</h2>
+      <p>Want to be a part of our staff team? We’re looking for mature, helpful, and responsible players!</p>
+      <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+        <li>✔ Your age (13+ only)</li>
+        <li>✔ Why you want to be staff</li>
+        <li>✔ What makes you a good fit</li>
+        <li>✔ Your past moderation experience</li>
+        <li>✔ How many hours per week you can dedicate</li>
+      </ul>
+      <br />
+      <a href="https://formspree.io/forms/mvgrnojg/integration" target="_blank" style="color: #00f; font-weight: bold;">Apply Now →</a>
+    </section>
 
-  <section id="plugins" class="tab-content">
-    <h2>Server Plugins</h2>
-    <ul class="plugin-list">
-      <li>.paper-remapped</li><li>AdvancedServerList</li><li>BedWars</li><li>BellClaims</li>
-      <li>BlueMap</li><li>bStats</li><li>ChatFormatter</li><li>Chunky</li>
-      <li>CommandPanels</li><li>Essentials</li><li>Factions</li><li>FancyNpcs</li>
-      <li>FastAsyncWorldEdit</li><li>floodgate</li><li>Geyser-Spigot</li><li>LevelledMobs</li>
-      <li>LuckPerms</li><li>Maintenance</li><li>Multiverse-Core</li><li>Origins-Fantasy</li>
-      <li>Origins-Magic</li><li>Origins-Mobs</li><li>Origins-Monsters</li><li>Origins-Reborn</li>
-      <li>PhoenixCratesLite</li><li>Plan</li><li>SkinsRestorer</li><li>spark</li>
-      <li>TAB</li><li>TerraformGenerator</li><li>Timber</li><li>Vault</li>
-      <li>Veinminer</li><li>ViaVersion</li><li>voicechat</li><li>WildRTP</li>
-      <li>WorldEdit</li><li>WorldGuard</li>
-    </ul>
-  </section>
-
-  <section id="staff" class="tab-content">
-    <h2>Apply for Staff</h2>
-    <form action="https://formspree.io/f/mvgrnojg" method="POST">
-      <input type="text" name="name" placeholder="Your full name" required>
-      <input type="number" name="age" placeholder="Your age" min="13" required>
-      <input type="text" name="discord" placeholder="Discord Username (e.g., User#1234)" required>
-
-      <textarea name="experience" placeholder="Do you have prior staff experience?" rows="4" required></textarea>
-      <textarea name="motivation" placeholder="Why do you want to be staff?" rows="4" required></textarea>
-      <textarea name="strengths" placeholder="Your strengths?" rows="3" required></textarea>
-      <textarea name="weaknesses" placeholder="Areas you can improve on?" rows="3" required></textarea>
-      <input type="text" name="availability" placeholder="Hours per week you can dedicate" required>
-      <textarea name="conflicts" placeholder="Have you been banned before? Explain." rows="3"></textarea>
-
-      <button type="submit">Submit Application</button>
-    </form>
-  </section>
-
-  <section id="rules" class="tab-content">
-    <h2>📜 Server Rules</h2>
-    <ul>
-      <li>No griefing or stealing.</li>
-      <li>Be respectful to all players and staff.</li>
-      <li>No hacking, x-ray, or unfair mods.</li>
-      <li>Keep chat friendly—no hate speech, harassment, or spam.</li>
-      <li>Use common sense. If it feels wrong, don’t do it.</li>
-    </ul>
-  </section>
-
-  <section id="top-factions" class="tab-content">
-    <h2>🏆 Top Factions</h2>
-    <ol>
-      <li>Shadow Reapers — 125 Kills</li>
-      <li>Netherborn — 98 Kills</li>
-      <li>The EndGuard — 89 Kills</li>
-    </ol>
-  </section>
+    <section id="join">
+      <h2>How to Join</h2>
+      <p>Server IP: <strong>ShadowFactionSMP.mc.gg</strong></p>
+      <p>Compatible with Java and Bedrock (via Geyser)</p>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Shadow Faction SMP. All rights reserved.
+    &copy; 2025 Shadow Faction SMP — All rights reserved.
   </footer>
 
-  <!-- JavaScript -->
   <script>
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
+    function updatePlayerCount() {
+      fetch("https://api.mcstatus.io/v2/status/java/ShadowFactionSMP.mc.gg")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("player-count").textContent =
+            `${data.players.online}/${data.players.max}`;
+        })
+        .catch(err => {
+          document.getElementById("player-count").textContent = "Offline";
+          console.error("Error fetching player count:", err);
+        });
+    }
 
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const target = button.getAttribute('data-tab');
-
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(tab => tab.classList.remove('active'));
-
-        button.classList.add('active');
-        document.getElementById(target).classList.add('active');
-      });
-    });
-
-    // Placeholder player count
-    document.getElementById("player-count").textContent = `${Math.floor(Math.random() * 20)}/50`;
+    updatePlayerCount(); // Load on start
+    setInterval(updatePlayerCount, 15000); // Update every 15s
   </script>
-
 </body>
 </html>
