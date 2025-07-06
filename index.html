@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shadow Faction SMP</title>
   <style>
-    /* Reset and layout */
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -32,6 +31,7 @@
 
     .tabs {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       background: #1e1e1e;
       padding: 0.5rem 0;
@@ -122,6 +122,20 @@
       font-size: 0.9rem;
       color: #888;
     }
+
+    ol {
+      padding-left: 1.5rem;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+
+    .player-count {
+      text-align: center;
+      margin: 2rem 0;
+    }
   </style>
 </head>
 <body>
@@ -135,12 +149,22 @@
     <button class="tab-button active" data-tab="home">Home</button>
     <button class="tab-button" data-tab="plugins">Plugins</button>
     <button class="tab-button" data-tab="staff">Staff Application</button>
+    <button class="tab-button" data-tab="rules">Rules</button>
+    <button class="tab-button" data-tab="top-factions">Top Factions</button>
   </div>
 
   <section id="home" class="tab-content active">
     <h2>Welcome to Shadow Faction SMP</h2>
     <p>A unique Minecraft experience with custom factions, origins, BedWars, and more. Explore, conquer, and survive in a dynamic world!</p>
     <a href="#join" class="btn">Join the Faction</a>
+
+    <div class="player-count">
+      <h3>🧑‍🤝‍🧑 Players Online: <span id="player-count">Loading...</span></h3>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="http://yourmaplink.com" class="btn" target="_blank">🌍 View World Map</a>
+    </div>
   </section>
 
   <section id="plugins" class="tab-content">
@@ -177,11 +201,31 @@
     </form>
   </section>
 
+  <section id="rules" class="tab-content">
+    <h2>📜 Server Rules</h2>
+    <ul>
+      <li>No griefing or stealing.</li>
+      <li>Be respectful to all players and staff.</li>
+      <li>No hacking, x-ray, or unfair mods.</li>
+      <li>Keep chat friendly—no hate speech, harassment, or spam.</li>
+      <li>Use common sense. If it feels wrong, don’t do it.</li>
+    </ul>
+  </section>
+
+  <section id="top-factions" class="tab-content">
+    <h2>🏆 Top Factions</h2>
+    <ol>
+      <li>Shadow Reapers — 125 Kills</li>
+      <li>Netherborn — 98 Kills</li>
+      <li>The EndGuard — 89 Kills</li>
+    </ol>
+  </section>
+
   <footer>
     &copy; 2025 Shadow Faction SMP. All rights reserved.
   </footer>
 
-  <!-- JavaScript for tab functionality -->
+  <!-- JavaScript -->
   <script>
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -197,6 +241,9 @@
         document.getElementById(target).classList.add('active');
       });
     });
+
+    // Placeholder player count
+    document.getElementById("player-count").textContent = `${Math.floor(Math.random() * 20)}/50`;
   </script>
 
 </body>
