@@ -233,4 +233,33 @@
 
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Remove active from all buttons
+        // Remove active from all buttons and sections
+        buttons.forEach(b => b.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+
+        // Add active to clicked button and related section
+        btn.classList.add('active');
+        const tab = btn.getAttribute('data-tab');
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+
+    // Player count update
+    function updatePlayerCount() {
+      fetch("https://api.mcstatus.io/v2/status/java/ShadowFactionSMP.mc.gg")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("player-count").textContent =
+            `${data.players.online}/${data.players.max}`;
+        })
+        .catch(err => {
+          document.getElementById("player-count").textContent = "Offline";
+          console.error("Error fetching player count:", err);
+        });
+    }
+
+    updatePlayerCount();
+    setInterval(updatePlayerCount, 15000);
+  </script>
+</body>
+</html>
