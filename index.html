@@ -68,6 +68,7 @@
       max-width: 900px;
       margin: 0 auto 40px;
       width: 100%;
+      text-align: left;
     }
 
     main p {
@@ -76,6 +77,7 @@
       margin-bottom: 30px;
       color: #bbb;
       text-shadow: 0 0 5px #00ffcc33;
+      text-align: center;
     }
 
     footer {
@@ -84,6 +86,7 @@
       font-size: 0.9rem;
       color: #444;
       text-shadow: none;
+      text-align: center;
     }
 
     /* Glow animation */
@@ -151,13 +154,12 @@
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0 0 15px #00ffcc44;
-      max-height: 400px;
+      max-height: 600px;
       overflow-y: auto;
       color: #ccc;
-      text-align: left;
       font-size: 1.1rem;
       line-height: 1.5;
-      white-space: pre-line;
+      white-space: normal;
     }
 
     .tab-content.active {
@@ -183,6 +185,70 @@
       color: #00ffc8;
       text-shadow: 0 0 5px #00ffc8;
     }
+
+    /* Form styling */
+    form {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="number"],
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #00ffcc88;
+      background: #222;
+      color: #ddd;
+      font-size: 1rem;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+
+    form textarea {
+      min-height: 100px;
+    }
+
+    form button {
+      margin-top: 25px;
+      background: #00ffcc;
+      color: #0a0a0a;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffcc;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    form button:hover {
+      background: #00e6b8;
+      box-shadow: 0 0 20px #00e6b8;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .plugin-list {
+        columns: 1;
+      }
+
+      header h1 {
+        font-size: 3rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -195,6 +261,7 @@
     <div class="tabs">
       <button class="tab-button active" data-tab="home">Home</button>
       <button class="tab-button" data-tab="plugins">Plugins</button>
+      <button class="tab-button" data-tab="staff">Staff Application</button>
     </div>
 
     <section id="home" class="tab-content active">
@@ -227,47 +294,4 @@
         <li>Multiverse-Core</li>
         <li>Origins-Fantasy</li>
         <li>Origins-Magic</li>
-        <li>Origins-Mobs</li>
-        <li>Origins-Monsters</li>
-        <li>Origins-Reborn</li>
-        <li>PhoenixCratesLite</li>
-        <li>Plan</li>
-        <li>SkinsRestorer</li>
-        <li>spark</li>
-        <li>TAB</li>
-        <li>TerraformGenerator</li>
-        <li>Timber</li>
-        <li>Vault</li>
-        <li>Veinminer</li>
-        <li>ViaVersion</li>
-        <li>voicechat</li>
-        <li>WildRTP</li>
-        <li>WorldEdit</li>
-        <li>WorldGuard</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Shadow Faction SMP | Crafted with passion and pixel power
-  </footer>
-
-  <script>
-    // Tab switching logic
-    const buttons = document.querySelectorAll('.tab-button');
-    const contents = document.querySelectorAll('.tab-content');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Remove active from all buttons and contents
-        buttons.forEach(btn => btn.classList.remove('active'));
-        contents.forEach(content => content.classList.remove('active'));
-
-        // Add active to clicked button and related content
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
-      });
-    });
-  </script>
-</body>
-</html>
+        <li>Origins-M
