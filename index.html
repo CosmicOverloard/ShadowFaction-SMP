@@ -282,4 +282,63 @@
     <textarea id="why_staff" name="why_staff" rows="5" required></textarea>
 
     <label for="qualifications">What qualifies you to be staff?</label>
-    <textarea id="qualifications
+    <textarea id="qualifications" name="qualifications" rows="5" required></textarea>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</section>
+
+<!-- PLUGINS -->
+<section id="plugins">
+  <h1>Server Plugins</h1>
+  <ul>
+    <li><strong>EssentialsX:</strong> Basic commands and essentials for gameplay.</li>
+    <li><strong>Factions:</strong> Create and manage factions with war, alliances, and territory control.</li>
+    <li><strong>WorldEdit:</strong> Build and edit terrain easily.</li>
+    <li><strong>ChestShop:</strong> Player-driven economy with shops.</li>
+    <li><strong>Dynmap:</strong> Live map of the server world in the browser.</li>
+    <li><strong>CoreProtect:</strong> Logging and rollback of griefing.</li>
+    <li><strong>Jobs Reborn:</strong> Add jobs and earn money.</li>
+  </ul>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h1>Gallery</h1>
+  <div class="gallery">
+    <img src="https://cdn.discordapp.com/attachments/1033819533987548192/1106915523155296819/unknown.png" alt="Shadow Factions SMP screenshot 1" />
+    <img src="https://cdn.discordapp.com/attachments/1033819533987548192/1106915523754289204/unknown.png" alt="Shadow Factions SMP screenshot 2" />
+    <img src="https://cdn.discordapp.com/attachments/1033819533987548192/1106915523304941628/unknown.png" alt="Shadow Factions SMP screenshot 3" />
+  </div>
+</section>
+
+<script>
+  const navLinks = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('section');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+      const currentSection = document.querySelector('section.active');
+      const targetSection = document.getElementById(targetId);
+
+      if (currentSection === targetSection) return; // no change
+
+      // Animate fade out
+      currentSection.classList.add('fade-out');
+
+      // Remove active from nav links, add to clicked
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      setTimeout(() => {
+        currentSection.classList.remove('active', 'fade-out');
+        targetSection.classList.add('active');
+      }, 500);
+    });
+  });
+</script>
+
+</body>
+</html>
