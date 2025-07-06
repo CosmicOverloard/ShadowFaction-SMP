@@ -10,22 +10,23 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #121212;
       color: #f0f0f0;
+      scroll-behavior: smooth;
     }
 
     header {
-      background: linear-gradient(to right, #222, #111);
+      background: #1b1b1b;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1rem;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: #00ffff;
       text-shadow: 0 0 10px #00ffff;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #ccc;
     }
 
@@ -33,16 +34,18 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      background: #1e1e1e;
-      padding: 0.75rem 0;
+      background: #181818;
+      padding: 0.5rem;
+      border-top: 1px solid #00ffff33;
+      border-bottom: 1px solid #00ffff33;
     }
 
     nav a {
       color: #ccc;
-      padding: 0.75rem 1.5rem;
+      padding: 0.5rem 1rem;
       text-decoration: none;
-      font-size: 1rem;
-      transition: 0.3s;
+      font-size: 0.95rem;
+      transition: 0.2s;
     }
 
     nav a:hover {
@@ -57,74 +60,91 @@
     }
 
     section {
-      margin-bottom: 4rem;
-      animation: fadeIn 0.3s ease-in-out;
+      margin-bottom: 2rem;
     }
 
     section h2 {
+      font-size: 1.75rem;
       color: #00ffff;
-      font-size: 2rem;
-      text-shadow: 0 0 8px #00ffff;
-      margin-bottom: 1rem;
       text-align: center;
+      margin-bottom: 0.5rem;
     }
 
-    .player-count {
-      text-align: center;
-      font-size: 1.5rem;
-      margin-top: 1rem;
-      color: #0f0;
+    section p, li {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ddd;
     }
 
     ul {
-      list-style-type: disc;
-      padding-left: 2rem;
-    }
-
-    ul li {
-      padding: 0.25rem 0;
-    }
-
-    a.btn, a[href^="http"] {
-      display: inline-block;
-      background-color: #00ffff;
-      color: #000;
-      padding: 0.75rem 1.25rem;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      margin-top: 1rem;
-      transition: background 0.3s;
-    }
-
-    a.btn:hover {
-      background-color: #00dddd;
+      padding-left: 1.5rem;
     }
 
     iframe {
       width: 100%;
-      height: 600px;
+      height: 500px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-top: 1rem;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #888;
       background-color: #111;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .player-count {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #0f0;
+    }
+
+    /* Form styles */
+    form {
+      display: grid;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 1rem auto;
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #00ffff33;
+    }
+
+    label {
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background-color: #222;
+      color: #fff;
+    }
+
+    input[type="submit"] {
+      background-color: #00ffff;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00dddd;
     }
 
     @media (max-width: 600px) {
       iframe {
-        height: 400px;
+        height: 300px;
       }
     }
   </style>
@@ -148,46 +168,47 @@
   <main>
     <section id="home">
       <h2>🏠 About the Server</h2>
-      <p>
-        Join an epic survival factions experience packed with magic, dangerous mobs, PvP combat, and custom systems. Shadow Faction SMP offers a thrilling blend of lore, economy, and conquest!
-      </p>
+      <p>Join an epic survival factions experience packed with magic, dangerous mobs, PvP combat, and custom systems. Shadow Faction SMP offers a thrilling blend of lore, economy, and conquest!</p>
     </section>
 
     <section id="plugins">
       <h2>⚙️ Plugins</h2>
-      <ul>
-        <li>.paper-remapped</li><li>AdvancedServerList</li><li>BedWars</li><li>BellClaims</li>
-        <li>BlueMap</li><li>bStats</li><li>ChatFormatter</li><li>Chunky</li>
-        <li>CommandPanels</li><li>Essentials</li><li>Factions</li><li>FancyNpcs</li>
-        <li>FastAsyncWorldEdit</li><li>floodgate</li><li>Geyser-Spigot</li><li>LevelledMobs</li>
-        <li>LuckPerms</li><li>Maintenance</li><li>Multiverse-Core</li><li>Origins-Fantasy</li>
-        <li>Origins-Magic</li><li>Origins-Mobs</li><li>Origins-Monsters</li><li>Origins-Reborn</li>
-        <li>PhoenixCratesLite</li><li>Plan</li><li>SkinsRestorer</li><li>spark</li>
-        <li>TAB</li><li>TerraformGenerator</li><li>Timber</li><li>Vault</li>
-        <li>Veinminer</li><li>ViaVersion</li><li>voicechat</li><li>WildRTP</li>
-        <li>WorldEdit</li><li>WorldGuard</li>
+      <p>We use a variety of plugins to create the perfect SMP experience:</p>
+      <ul style="columns: 2;">
+        <li>Essentials</li><li>Factions</li><li>LuckPerms</li><li>BlueMap</li>
+        <li>Geyser/Floodgate</li><li>FastAsyncWorldEdit</li><li>Origins Mods</li><li>BedWars</li>
+        <li>Multiverse</li><li>Vault</li><li>TAB</li><li>Plan</li>
+        <li>Timber</li><li>WildRTP</li><li>Veinminer</li><li>SkinsRestorer</li>
       </ul>
     </section>
 
     <section id="staff">
-      <h2>🛠️ Staff Applications</h2>
-      <p>
-        Want to be a part of our staff team? We’re looking for mature, helpful, and responsible players to help maintain and grow our community!
-      </p>
-      <ul>
-        <li>✔ Must be age 13 or older</li>
-        <li>✔ Explain why you want to be staff</li>
-        <li>✔ Describe your past moderation experience</li>
-        <li>✔ Availability per week</li>
-        <li>✔ What strengths you bring to the team</li>
-      </ul>
-      <a class="btn" href="https://formspree.io/forms/mvgrnojg/integration" target="_blank">Apply Now →</a>
+      <h2>🛠️ Staff Application</h2>
+      <p>Think you're a good fit for our team? Fill out the form below and we’ll review your application shortly.</p>
+      <form action="https://formspree.io/f/mvgrnojg" method="POST">
+        <label for="name">Minecraft Username:</label>
+        <input type="text" name="name" id="name" required />
+
+        <label for="age">Your Age (13+ only):</label>
+        <input type="number" name="age" id="age" required min="13" />
+
+        <label for="reason">Why do you want to be staff?</label>
+        <textarea name="reason" id="reason" rows="3" required></textarea>
+
+        <label for="experience">What experience do you have?</label>
+        <textarea name="experience" id="experience" rows="3" required></textarea>
+
+        <label for="hours">How many hours/week can you dedicate?</label>
+        <input type="text" name="hours" id="hours" required />
+
+        <input type="submit" value="Submit Application" />
+      </form>
     </section>
 
     <section id="join">
       <h2>🎮 How to Join</h2>
       <p><strong>Server IP:</strong> ShadowFactionSMP.mc.gg</p>
-      <p><strong>Supported:</strong> Java & Bedrock Edition (via Geyser)</p>
+      <p><strong>Supported:</strong> Java & Bedrock (via Geyser)</p>
     </section>
 
     <section id="map">
@@ -197,7 +218,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Shadow Faction SMP. All rights reserved.
+    &copy; 2025 Shadow Faction SMP — All rights reserved.
   </footer>
 
   <script>
