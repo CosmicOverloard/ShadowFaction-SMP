@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shadow Faction SMP</title>
   <style>
     body {
@@ -45,7 +45,7 @@
     section {
       margin-bottom: 60px;
     }
-    button.map-btn {
+    .map-btn, .discord-btn {
       background-color: #008cba;
       color: white;
       border: none;
@@ -55,7 +55,7 @@
       cursor: pointer;
       margin-top: 15px;
     }
-    button.map-btn:hover {
+    .map-btn:hover, .discord-btn:hover {
       background-color: #0073a1;
     }
     footer {
@@ -70,84 +70,20 @@
   <header>
     <h1>Welcome to Shadow Faction SMP</h1>
     <p class="player-count">Online Players: <span id="player-count">Loading...</span></p>
+    <button class="map-btn" onclick="window.open('http://209.192.187.86:6943/', '_blank')">View Live Map</button>
   </header>
 
   <nav>
-    <a href="#home">Home</a>
-    <a href="#plugins">Plugins</a>
-    <a href="#staff">Staff Application</a>
-    <a href="#join">Join Factions</a>
+    <a href="index.html">Home</a>
+    <a href="plugins.html">Plugins</a>
+    <a href="staff.html">Staff Application</a>
+    <a href="join.html">Join Factions</a>
   </nav>
 
   <main>
-    <section id="home">
+    <section>
       <h2>About the Server</h2>
       <p>Join an epic survival factions experience. Magic, mobs, PvP, and more await!</p>
-    </section>
-
-    <section id="plugins">
-      <h2>Plugins</h2>
-      <ul style="list-style: none; padding: 0;">
-        <li>.paper-remapped</li>
-        <li>AdvancedServerList</li>
-        <li>BedWars</li>
-        <li>BellClaims</li>
-        <li>BlueMap</li>
-        <li>bStats</li>
-        <li>ChatFormatter</li>
-        <li>Chunky</li>
-        <li>CommandPanels</li>
-        <li>Essentials</li>
-        <li>Factions</li>
-        <li>FancyNpcs</li>
-        <li>FastAsyncWorldEdit</li>
-        <li>floodgate</li>
-        <li>Geyser-Spigot</li>
-        <li>LevelledMobs</li>
-        <li>LuckPerms</li>
-        <li>Maintenance</li>
-        <li>Multiverse-Core</li>
-        <li>Origins-Fantasy</li>
-        <li>Origins-Magic</li>
-        <li>Origins-Mobs</li>
-        <li>Origins-Monsters</li>
-        <li>Origins-Reborn</li>
-        <li>PhoenixCratesLite</li>
-        <li>Plan</li>
-        <li>SkinsRestorer</li>
-        <li>spark</li>
-        <li>TAB</li>
-        <li>TerraformGenerator</li>
-        <li>Timber</li>
-        <li>Vault</li>
-        <li>Veinminer</li>
-        <li>ViaVersion</li>
-        <li>voicechat</li>
-        <li>WildRTP</li>
-        <li>WorldEdit</li>
-        <li>WorldGuard</li>
-      </ul>
-    </section>
-
-    <section id="staff">
-      <h2>Staff Applications</h2>
-      <p>Want to be a part of our staff team? We’re looking for mature, helpful, and responsible players!</p>
-      <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
-        <li>✔ Your age (13+ only)</li>
-        <li>✔ Why you want to be staff</li>
-        <li>✔ What makes you a good fit</li>
-        <li>✔ Your past moderation experience</li>
-        <li>✔ How many hours per week you can dedicate</li>
-      </ul>
-      <br />
-      <a href="https://formspree.io/forms/mvgrnojg/integration" target="_blank" style="color: #00f; font-weight: bold;">Apply Now →</a>
-    </section>
-
-    <section id="join">
-      <h2>How to Join</h2>
-      <p>Server IP: <strong>ShadowFactionSMP.mc.gg</strong></p>
-      <p>Compatible with Java and Bedrock (via Geyser)</p>
-      <button class="map-btn" onclick="window.open('http://209.192.187.86:6943/', '_blank')">View Live Map</button>
     </section>
   </main>
 
