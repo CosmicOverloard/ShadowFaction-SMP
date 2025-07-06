@@ -3,342 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shadow Factions SMP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <title>Shadow Faction SMP</title>
   <style>
-    /* GENERAL STYLES */
-    body {
+    /* Reset */
+    * {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background-color: #121212;
-      color: #fff;
-      padding: 20px;
-      position: relative;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #0a0a0a;
+      color: #ddd;
+      display: flex;
+      flex-direction: column;
       min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
     }
 
     header {
-      background-color: #222;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid #00ff99;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #00ff99;
+      font-size: 4rem;
+      letter-spacing: 0.1em;
+      color: #00ffcc;
     }
 
-    /* NAVIGATION */
-    nav {
-      background-color: #111;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      border-bottom: 1px solid #333;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      color: #00ff99;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #00cc77;
-    }
-
-    /* SECTIONS (pages) */
-    section {
-      position: absolute;
-      top: 120px; /* header + nav height approx */
-      left: 0;
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      box-sizing: border-box;
-
-      background: #222;
-      border-radius: 10px;
-      display: none;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      min-height: 70vh;
-    }
-
-    section.active {
-      display: block;
-      opacity: 1;
-      position: relative; /* bring active section back to flow */
-    }
-
-    section.fade-out {
-      opacity: 0;
-    }
-
-    /* HEADINGS */
-    h1, h2 {
-      color: #00ff99;
-      margin-top: 0;
-    }
-
-    /* FORM STYLES (Apply section) */
-    form label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
-    }
-
-    form input[type="text"],
-    form input[type="email"],
-    form textarea {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: none;
-      font-size: 1em;
-      background: #333;
-      color: #fff;
-      resize: vertical;
-    }
-
-    form button {
-      background: #00ff99;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    form button:hover {
-      background: #00cc77;
-    }
-
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      border: 2px solid #00ff99;
-    }
-
-    /* PLUGIN LIST */
-    ul {
-      list-style: square;
-      padding-left: 20px;
-    }
-
-    /* RULES */
-    section.rules ul {
-      list-style-type: disc;
-      padding-left: 20px;
+    header p {
+      font-size: 1.2rem;
+      color: #66fff3aa;
       margin-top: 10px;
+      font-style: italic;
     }
 
-    section.rules section {
-      background: none;
-      padding: 0;
-      border-radius: 0;
-      max-width: 100%;
-      margin: 0;
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #0a0a0a;
+      background: #00ffcc;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffcc;
+      transition: background 0.3s, box-shadow 0.3s;
+      text-decoration: none;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-      }
+    .btn:hover {
+      background: #00e6b8;
+      box-shadow: 0 0 20px #00e6b8;
+    }
 
-      nav a {
-        margin: 10px 0;
-      }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-      section {
-        top: 150px;
-        padding: 15px;
+    main p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #bbb;
+      text-shadow: 0 0 5px #00ffcc33;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #444;
+      text-shadow: none;
+    }
+
+    /* Cool animated glow effect on some text */
+    .glow {
+      color: #00ffcc;
+      text-shadow:
+        0 0 5px #00ffc8,
+        0 0 10px #00ffc8,
+        0 0 20px #00ffc8,
+        0 0 40px #00ffc8,
+        0 0 80px #00ffc8;
+      animation: pulseGlow 2s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      from {
+        text-shadow:
+          0 0 10px #00ffc8,
+          0 0 20px #00ffc8,
+          0 0 30px #00ffc8,
+          0 0 50px #00ffc8,
+          0 0 100px #00ffc8;
+      }
+      to {
+        text-shadow:
+          0 0 5px #00ffc8,
+          0 0 10px #00ffc8,
+          0 0 15px #00ffc8,
+          0 0 30px #00ffc8,
+          0 0 60px #00ffc8;
       }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1 class="glow">Shadow Faction SMP</h1>
+    <p>Survive. Build. Conquer the shadows.</p>
+  </header>
 
-<header>
-  <h1>Shadow Factions SMP</h1>
-</header>
+  <main>
+    <p>Welcome to <strong>Shadow Faction SMP</strong> — a community where strategy, alliance, and adventure meet. Join us to explore vast worlds, build epic bases, and engage in thrilling faction battles.</p>
 
-<nav>
-  <a href="#" class="active" data-target="home">Home</a>
-  <a href="#" data-target="rules">Rules</a>
-  <a href="#" data-target="apply">Apply</a>
-  <a href="#" data-target="plugins">Plugins</a>
-  <a href="#" data-target="gallery">Gallery</a>
-</nav>
+    <a href="#join" class="btn">Join the Faction</a>
+  </main>
 
-<!-- HOME -->
-<section id="home" class="active">
-  <h2>Welcome to Shadow Factions SMP!</h2>
-  <p>Join the ultimate Minecraft SMP experience where strategy, alliances, and battles shape the world.</p>
-  <p>Explore factions, take part in events, and rise to power.</p>
-  <p>Server IP: <strong>your.server.ip</strong></p>
-</section>
-
-<!-- RULES -->
-<section id="rules" class="rules">
-  <h1>Server Rules - ShadowFaction SMP</h1>
-
-  <section>
-    <h2>1. General Conduct</h2>
-    <ul>
-      <li>Show respect to all players and staff members.</li>
-      <li>Do not impersonate staff or other players.</li>
-      <li>Maintain a friendly atmosphere — even in competitive environments.</li>
-      <li>Toxicity and excessive salt will not be tolerated.</li>
-    </ul>
-
-    <h2>2. Raiding & Stealing</h2>
-    <ul>
-      <li>Raiding and stealing are allowed as part of faction warfare.</li>
-      <li>You may loot enemy bases and engage in PvP — be strategic, not abusive.</li>
-      <li>Spawn camping or repeated harassment outside of conflict is not allowed.</li>
-    </ul>
-
-    <h2>3. Client Modifications & Fair Play</h2>
-    <ul>
-      <li>No hacked clients, auto-clickers, or unfair advantages.</li>
-      <li>Allowed mods: OptiFine, minimaps (no radar), performance enhancers, shader packs.</li>
-      <li>Using exploits or glitches will result in punishment.</li>
-    </ul>
-
-    <h2>4. Chat Rules</h2>
-    <ul>
-      <li>Keep chat civil and appropriate for all players.</li>
-      <li>No hate speech, racism, or targeted harassment.</li>
-      <li>Friendly trash talk is fine — keep it fun, not toxic.</li>
-      <li>No spamming, flooding, or advertising.</li>
-    </ul>
-
-    <h2>5. Staff & Reports</h2>
-    <ul>
-      <li>Listen to staff at all times — their word is final.</li>
-      <li>Abuse towards staff will result in punishment.</li>
-      <li>Found a bug or rule breaker? Report it directly — your help matters.</li>
-    </ul>
-
-    <h2>6. PvP Guidelines</h2>
-    <ul>
-      <li>PvP is always enabled — consent is not required.</li>
-      <li>Use good sportsmanship — avoid excessive spawn camping.</li>
-      <li>Trap setups are allowed but must not abuse spawn zones.</li>
-    </ul>
-
-    <h2>7. Exploits & Bugs</h2>
-    <ul>
-      <li>Do not use unintended game mechanics for advantage (e.g., duplication).</li>
-      <li>Report bugs and exploits immediately — honesty is rewarded.</li>
-    </ul>
-
-    <h2>8. Community Standards</h2>
-    <ul>
-      <li>Do not attempt to crash, lag, or disrupt the server intentionally.</li>
-      <li>Do not share personal information — yours or others’.</li>
-      <li>Have fun and help build a great faction-based community!</li>
-    </ul>
-  </section>
-</section>
-
-<!-- APPLY -->
-<section id="apply">
-  <h1>Staff Application</h1>
-  <p>Fill out the form below to apply for staff on ShadowFaction SMP.</p>
-
-  <form action="https://formspree.io/f/mvgrnojg" method="POST">
-    <label for="username">Minecraft Username:</label>
-    <input type="text" id="username" name="username" required />
-
-    <label for="email">Your Email:</label>
-    <input type="email" id="email" name="_replyto" required />
-
-    <label for="why_staff">Why do you want to be staff?</label>
-    <textarea id="why_staff" name="why_staff" rows="5" required></textarea>
-
-    <label for="qualifications">What qualifies you to be staff?</label>
-    <textarea id="qualifications" name="qualifications" rows="5" required></textarea>
-
-    <button type="submit">Submit Application</button>
-  </form>
-</section>
-
-<!-- PLUGINS -->
-<section id="plugins">
-  <h1>Server Plugins</h1>
-  <ul>
-    <li><strong>EssentialsX:</strong> Basic commands and essentials for gameplay.</li>
-    <li><strong>Factions:</strong> Create and manage factions with war, alliances, and territory control.</li>
-    <li><strong>WorldEdit:</strong> Build and edit terrain easily.</li>
-    <li><strong>ChestShop:</strong> Player-driven economy with shops.</li>
-    <li><strong>Dynmap:</strong> Live map of the server world in the browser.</li>
-    <li><strong>CoreProtect:</strong> Logging and rollback of griefing.</li>
-    <li><strong>Jobs Reborn:</strong> Add jobs and earn money.</li>
-  </ul>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <h1>Gallery</h1>
-  <div class="gallery">
-    <img src="https://cdn.discordapp.com/attachments/1033819533987548192/1106915523155296819/unknown.png" alt="Shadow Factions SMP screenshot 1" />
-    <img src="https://cdn.discordapp.com/attachments/1033819533987548192/1106915523754289204/unknown.png" alt="Shadow Factions SMP screenshot 2" />
-    <img src="https://cdn.discordapp.com/attachments/1033819533987548192/1106915523304941628/unknown.png" alt="Shadow Factions SMP screenshot 3" />
-  </div>
-</section>
-
-<script>
-  const navLinks = document.querySelectorAll('nav a');
-  const sections = document.querySelectorAll('section');
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const targetId = link.getAttribute('data-target');
-      const currentSection = document.querySelector('section.active');
-      const targetSection = document.getElementById(targetId);
-
-      if (currentSection === targetSection) return; // no change
-
-      // Animate fade out
-      currentSection.classList.add('fade-out');
-
-      // Remove active from nav links, add to clicked
-      navLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-
-      setTimeout(() => {
-        currentSection.classList.remove('active', 'fade-out');
-        targetSection.classList.add('active');
-      }, 500);
-    });
-  });
-</script>
-
+  <footer>
+    &copy; 2025 Shadow Faction SMP | Crafted with passion and pixel power
+  </footer>
 </body>
 </html>
